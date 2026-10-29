@@ -16,7 +16,7 @@ from freegames import path
 
 car = path('car.gif')
 tiles = list(range(32)) * 2
-state = {'mark': None}
+state = {'mark': None, 'taps': 0}
 hide = [True] * 64
 
 
@@ -45,6 +45,9 @@ def xy(count):
 
 def tap(x, y):
     """Update mark and hidden tiles based on tap."""
+    state['taps'] += 1
+    print(f"Cantidad de clics ocurridos: {state['taps']}")
+
     spot = index(x, y)
     mark = state['mark']
 
