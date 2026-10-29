@@ -45,10 +45,17 @@ def xy(count):
 
 def tap(x, y):
     """Update mark and hidden tiles based on tap."""
+    if x < -100 or x > 100 or y < -100 or  y > 100:
+        return
+
+    spot = index(x, y)
+
+    if spot < 0 or spot >= len(tiles):
+        return
+
     state['taps'] += 1
     print(f"Cantidad de clics ocurridos: {state['taps']}")
 
-    spot = index(x, y)
     mark = state['mark']
 
     if mark is None or mark == spot or tiles[mark] != tiles[spot]:
