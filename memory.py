@@ -84,13 +84,21 @@ def draw():
             square(x, y)
 
     mark = state['mark']
-
+    
     if mark is not None and hide[mark]:
         x, y = xy(mark)
         up()
-        goto(x + 2, y)
+        
+        # Ejercicio 4: Centrar número si es de un solo dígito
+        if tiles[mark] < 10:
+            goto(x + 18, y + 2)
+        else:
+            goto(x + 2, y + 2)
+            
         color('black')
         write(tiles[mark], font=('Arial', 30, 'normal'))
+
+
 # Ejercicio 3: Mostrar mensaje de victoria en pantalla si ya ganaron
     if state.get('win', False):
         up()
