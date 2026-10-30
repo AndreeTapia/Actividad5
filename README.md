@@ -7,3 +7,4 @@ Andree Tapia:<rb>
 Fer Arriaga:<rb>
 
 - Se agregó mensaje de victoria.<rb>
+- Se centraron los números.<rb>
