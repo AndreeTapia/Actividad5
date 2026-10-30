@@ -1,4 +1,6 @@
 # Actividad 5
+El quinto repositorio contiene el archivo memory.py que es un videojuego del clásico juego de memoria con tarjetas.
+
 Andree Tapia:<rb>
 - Se modificó el código para contar e imprimir los clics.<rb>
 - Se modificó el tamaño de la cuadricula a 4x4.<rb>
