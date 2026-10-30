@@ -16,7 +16,7 @@ from freegames import path
 
 car = path('car.gif')
 tiles = list(range(8)) * 2
-state = {'mark': None, 'taps': 0}
+state = {'mark': None, 'taps': 0, 'win': False}
 hide = [True] * 16
 
 
@@ -60,10 +60,15 @@ def tap(x, y):
 
     if mark is None or mark == spot or tiles[mark] != tiles[spot]:
         state['mark'] = spot
-    else:
+    else:    
         hide[spot] = False
         hide[mark] = False
         state['mark'] = None
+
+        # Ejercicio3 detectar si todas las fichas fueron reveladas
+        if all(not h for h in hide):
+            state ['win'] = True
+        
 
 
 def draw():
@@ -86,6 +91,12 @@ def draw():
         goto(x + 2, y)
         color('black')
         write(tiles[mark], font=('Arial', 30, 'normal'))
+# Ejercicio 3: Mostrar mensaje de victoria en pantalla si ya ganaron
+    if state.get('win', False):
+        up()
+        goto(0, 0)
+        color('blue')
+        write("¡GANASTE!", align="center", font=('Arial', 30, 'bold'))
 
     update()
     ontimer(draw, 100)
