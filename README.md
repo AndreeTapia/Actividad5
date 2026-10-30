@@ -5,4 +5,5 @@ Andree Tapia:<rb>
 - Se agrego código para que el programa ignore cuaquier clic fuera de la cuadrícula 4x4.<rb>
 
 Fer Arriaga:<rb>
--Se agregó mensaje de victoria.<rb>
+
+- Se agregó mensaje de victoria.<rb>
