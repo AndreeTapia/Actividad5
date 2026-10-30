@@ -15,7 +15,7 @@ from turtle import *
 from freegames import path
 
 car = path('car.gif')
-tiles = list(range(8)) * 2
+tiles = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'] * 2
 state = {'mark': None, 'taps': 0, 'win': False}
 hide = [True] * 16
 
@@ -84,20 +84,13 @@ def draw():
             square(x, y)
 
     mark = state['mark']
-    
+
     if mark is not None and hide[mark]:
         x, y = xy(mark)
         up()
-        
-        # Ejercicio 4: Centrar número si es de un solo dígito
-        if tiles[mark] < 10:
-            goto(x + 18, y + 2)
-        else:
-            goto(x + 2, y + 2)
-            
+        goto(x + 10, y + 5)
         color('black')
-        write(tiles[mark], font=('Arial', 30, 'normal'))
-
+        write(tiles[mark], font=('Arial', 24, 'normal'))
 
 # Ejercicio 3: Mostrar mensaje de victoria en pantalla si ya ganaron
     if state.get('win', False):
